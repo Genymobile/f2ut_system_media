@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 #define _GNU_SOURCE // for fdprintf
 #include <inttypes.h>
 #include <system/camera_metadata.h>
@@ -26,9 +25,9 @@
 #include <stdlib.h>
 #include <errno.h>
 
-#define OK         0
-#define ERROR      1
-#define NOT_FOUND -ENOENT
+#define OK              0
+#define ERROR           1
+#define NOT_FOUND       -ENOENT
 #define SN_EVENT_LOG_ID 0x534e4554
 
 #define ALIGN_TO(val, alignment) \
@@ -463,6 +462,7 @@ int validate_camera_metadata_structure(const camera_metadata_t *metadata,
                     entry.count);
             return ERROR;
         }
+
         if (data_size != 0) {
             camera_metadata_data_t *data =
                     (camera_metadata_data_t*) (get_data(metadata) +
